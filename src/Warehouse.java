@@ -26,12 +26,8 @@ public class Warehouse {
 
     // увеличить количество продуктов, список id которых передан в метод, на 10
     public void IncreaseByIdList(HashMap<Integer, Product> products, ArrayList<Integer> idList) {
-        for (Map.Entry<Integer, Product> product : products.entrySet()) {
-            for (Integer id : idList){
-                if (product.getKey() == id){
-                    product.getValue().setAmount(product.getValue().getAmount() + 10);
-                }
-            }
+        for (int id : idList) {
+            products.get(id).setAmount(products.get(id).getAmount() + 10);
         }
     }
 
